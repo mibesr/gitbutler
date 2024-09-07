@@ -165,6 +165,9 @@ importers:
       '@tauri-apps/api':
         specifier: 2.0.0-rc.3
         version: 2.0.0-rc.3
+      '@tauri-apps/plugin-clipboard-manager':
+        specifier: 2.0.0-rc.1
+        version: 2.0.0-rc.1
       '@tauri-apps/plugin-dialog':
         specifier: 2.0.0-rc.1
         version: 2.0.0-rc.1
@@ -3292,6 +3295,9 @@ packages:
       }
     engines: { node: '>= 10' }
     hasBin: true
+
+  '@tauri-apps/plugin-clipboard-manager@2.0.0-rc.1':
+    resolution: {integrity: sha512-hFgUABMmQuVGKwHb8PR9fuqfk0WRkedbWUt/ZV5sL4Q6kLrsp3JYJvtzVPeMYdeBvMqHl8WXNxAc/zwSld2h9w==}
 
   '@tauri-apps/plugin-dialog@2.0.0-rc.1':
     resolution:
@@ -13453,6 +13459,10 @@ snapshots:
       '@tauri-apps/cli-win32-arm64-msvc': 2.0.0-rc.7
       '@tauri-apps/cli-win32-ia32-msvc': 2.0.0-rc.7
       '@tauri-apps/cli-win32-x64-msvc': 2.0.0-rc.7
+
+  '@tauri-apps/plugin-clipboard-manager@2.0.0-rc.1':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-rc.4
 
   '@tauri-apps/plugin-dialog@2.0.0-rc.1':
     dependencies:
