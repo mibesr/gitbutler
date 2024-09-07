@@ -19,6 +19,7 @@
 			"icons/dev/icon.icns",
 			"icons/dev/icon.ico"
 		],
+		"externalBin": ["gitbutler-git-setsid", "gitbutler-git-askpass"],
 		"windows": {
 			"certificateThumbprint": null
 		},
