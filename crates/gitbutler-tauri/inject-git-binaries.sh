@@ -2,13 +2,14 @@
 set -euo pipefail
 
 THIS="$0"
+MODE="$1"
 function log {
     printf "[%s] %s\n\n" "$THIS" "$*"
 }
 
 ROOT="$(dirname "$THIS")/../.."
 TRIPLE=${TRIPLE_OVERRIDE:-$(rustc -vV | sed -n 's|host: ||p')}
-TARGET_ROOT="$ROOT/target/${TRIPLE_OVERRIDE:-}/release"
+TARGET_ROOT="$ROOT/target/${TRIPLE_OVERRIDE:-}/${MODE}"
 CRATE_ROOT="$ROOT/crates/gitbutler-tauri"
 
 if [ -f "$TARGET_ROOT/gitbutler-git-askpass" ] && [ -f "$TARGET_ROOT/gitbutler-git-setsid" ]; then
