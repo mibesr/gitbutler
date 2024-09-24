@@ -1,5 +1,7 @@
 use super::r#virtual as vbranch;
-use crate::upstream_integration::{self, BranchStatuses, Resolution, UpstreamIntegrationContext};
+use crate::upstream_integration::{
+    self, BaseBranchResolutionApproach, BranchStatuses, Resolution, UpstreamIntegrationContext,
+};
 use crate::{
     base,
     base::BaseBranch,
@@ -564,6 +566,20 @@ pub fn integrate_upstream(project: &Project, resolutions: &[Resolution]) -> Resu
     upstream_integration::integrate_upstream(
         &command_context,
         resolutions,
+        guard.write_permission(),
+    )
+}
+
+pub fn resolve_upstream_integration(
+    project: &Project,
+    resolution_approach: BaseBranchResolutionApproach,
+) -> Result<git2::Oid> {
+    let command_context = CommandContext::open(project)?;
+    let mut guard = project.exclusive_worktree_access();
+
+    upstream_integration::resolve_upstream_integration(
+        &command_context,
+        resolution_approach,
         guard.write_permission(),
     )
 }
