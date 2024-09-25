@@ -220,6 +220,7 @@ export class Commit {
 	changeId!: string;
 	isSigned!: boolean;
 	parentIds!: string[];
+	conflicted!: boolean;
 
 	prev?: Commit;
 	next?: Commit;
