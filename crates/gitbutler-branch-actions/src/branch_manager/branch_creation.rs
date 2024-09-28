@@ -117,6 +117,7 @@ impl BranchManager<'_> {
             not_in_workspace_wip_change_id: None,
             source_refname: None,
             references: vec![],
+            heads: Default::default(),
         };
 
         if let Some(ownership) = &create.ownership {
@@ -261,6 +262,7 @@ impl BranchManager<'_> {
                 in_workspace: true,
                 not_in_workspace_wip_change_id: None,
                 references: vec![],
+                heads: Default::default(),
             }
         };
 
